@@ -48,10 +48,10 @@ export default async function OGImage(
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: '#1F2027',
+          backgroundColor: '#334155',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'black'
+          color: 'white'
         }}
       >
         {pageInfo.image && (
@@ -61,20 +61,8 @@ export default async function OGImage(
               position: 'absolute',
               width: '100%',
               height: '100%',
-              objectFit: 'cover'
-              // TODO: satori doesn't support background-size: cover and seems to
-              // have inconsistent support for filter + transform to get rid of the
-              // blurred edges. For now, we'll go without a blur filter on the
-              // background, but Satori is still very new, so hopefully we can re-add
-              // the blur soon.
-
-              // backgroundImage: pageInfo.image
-              //   ? `url(${pageInfo.image})`
-              //   : undefined,
-              // backgroundSize: '100% 100%'
-              // TODO: pageInfo.imageObjectPosition
-              // filter: 'blur(8px)'
-              // transform: 'scale(1.05)'
+              objectFit: 'cover',
+              opacity: 0.2
             }}
           />
         )}
@@ -86,7 +74,7 @@ export default async function OGImage(
             height: 465,
             display: 'flex',
             flexDirection: 'column',
-            border: '16px solid rgba(0,0,0,0.3)',
+            border: '16px solid rgba(255,255,255,0.1)',
             borderRadius: 8,
             zIndex: '1'
           }}
@@ -98,28 +86,32 @@ export default async function OGImage(
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-around',
-              backgroundColor: '#fff',
+              backgroundColor: '#1e293b',
               padding: 24,
               alignItems: 'center',
-              textAlign: 'center'
+              textAlign: 'center',
+              color: 'white'
             }}
           >
             {pageInfo.detail && (
-              <div style={{ fontSize: 32, opacity: 0 }}>{pageInfo.detail}</div>
+              <div style={{ fontSize: 32, opacity: 0.6 }}>
+                {pageInfo.detail}
+              </div>
             )}
 
             <div
               style={{
                 fontSize: 70,
                 fontWeight: 700,
-                fontFamily: 'Inter'
+                fontFamily: 'Inter',
+                color: 'white'
               }}
             >
               {pageInfo.title}
             </div>
 
             {pageInfo.detail && (
-              <div style={{ fontSize: 32, opacity: 0.6 }}>
+              <div style={{ fontSize: 32, opacity: 0.8 }}>
                 {pageInfo.detail}
               </div>
             )}
@@ -145,7 +137,6 @@ export default async function OGImage(
               style={{
                 width: '100%',
                 height: '100%'
-                // transform: 'scale(1.04)'
               }}
             />
           </div>

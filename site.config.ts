@@ -10,7 +10,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'Jiahao Li',
-  domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
+  domain: 'https://portfolio-notion-hazel.vercel.app/',
   author: 'Jiahao Li',
 
   // open graph metadata (optional)
